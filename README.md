@@ -120,7 +120,6 @@ public class Main {
             @Override
             public double fit(double x) {
                 return  -x*x*x*x -2*x*x*x + 3*x*x +x+ 2;
-                // x=19 , f(x)=441
             }
 
             @Override
@@ -142,15 +141,15 @@ public class Main {
 <img width="287" alt="스크린샷 2021-06-11 오후 6 23 03" src="https://user-images.githubusercontent.com/81741589/121664112-19405c00-cae2-11eb-9445-0e0f9c88893a.png">
 
 
-## 예시
+## curve fitting
 - 독립변수 : 걷는 시간
 - 종속변수 : 칼로리
  <br/>
-|걷는시간 |칼로리 |
+|걷는시간|칼로리|
 |-----|------|
-|10분 |54kcal|
-|20분 |108kcal|
-|30분 |162kcal|
-|40분 |216kcal|
-|50분 |269kcal|
-|60분 |323kcal|
+|10분|54kcal|
+|20분|108kcal|
+|30분|162kcal|
+|40분|216kcal|
+|50분|269kcal|
+|60분|323kcal|
