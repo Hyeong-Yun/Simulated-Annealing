@@ -8,7 +8,7 @@ public class Main {
 
             @Override
             public double fit(double x) {
-                return -x*x + 38*x + 80;
+                return 5.38*x +0.2;
                 // x=19 , f(x)=441
             }
 
@@ -18,9 +18,8 @@ public class Main {
             }
         };
 
-        double x = sa.solve(p, 100, 0.99, 0, 0, 31);
-        System.out.println(x);
-        System.out.println(p.fit(x));
-        System.out.println(sa.hist);
+        double x = sa.solve(p, 100, 0.99, 0, 10, 60);
+        System.out.println("x = "+x);
+        System.out.println("f(x) = "+p.fit(x));
     }
 }
