@@ -146,8 +146,8 @@ public class Main {
 - 종속변수 : 칼로리
  <br/>
  <br/>
-| minutes | kcal | 
-|--------|-------|
+|minutes|kcal|
+|---|---|
 |10|54|
 |20|108|
 |30|162|
