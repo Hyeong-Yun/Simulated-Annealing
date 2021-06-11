@@ -141,14 +141,51 @@ public class Main {
 <img width="287" alt="스크린샷 2021-06-11 오후 6 23 03" src="https://user-images.githubusercontent.com/81741589/121664112-19405c00-cae2-11eb-9445-0e0f9c88893a.png">
 
 
-## curve fitting
+## 선형 모델 예시
 - 독립변수 : 걷는 시간
 - 종속변수 : 칼로리
  <br/>
-걷는시간|칼로리
------|------
-10분|54kcal
-30분|162kcal
-40분|216kcal
-50분|269kcal
-60분|323kcal
+ <br/>
+걷는시간 | 칼로리
+-------|------
+10분 | 54kcal
+30분 | 162kcal
+40분 | 216kcal
+50분 | 269kcal
+60분 | 323kcal
+<br/>
+
+<img width="501" alt="스크린샷 2021-06-11 오후 7 33 53" src="https://user-images.githubusercontent.com/81741589/121673608-06cb2000-caec-11eb-9e0a-4c2e4e914005.png">
+<br/>
+- y = 5.38x + 0.02의 직선 모양이 된다.
+
+## 성능 분석 및 결과
+```java
+package com.company;
+
+public class Main {
+    public static void main(String[] args) {
+        SimulatedAnnealing sa = new SimulatedAnnealing(10);
+        Problem p = new Problem() {
+            @Override
+            public double fit(double x) {
+                return  5.38*x +0.2;
+            }
+
+            @Override
+            public boolean isNeighborBetter(double f0, double f1) {
+                return f0 < f1;
+            }
+        };
+
+        double x = sa.solve(p, 100, 0.99, 0, 10, 60);
+        System.out.println("x = "+x);
+        System.out.println("f(x) = "+p.fit(x));
+
+    }
+}
+```
+<img width="222" alt="스크린샷 2021-06-11 오후 7 46 34" src="https://user-images.githubusercontent.com/81741589/121675018-c8366500-caed-11eb-9a1c-6f59138f4d4b.png">
+
+- fit 함수 안에서 직선 5.38x + 0.02을 리턴하도록 하면 가장 적합한 파라미터 값을 추정할 수 있다.
+- 결과적으로 걷는 시간이 길어질 수록 칼로리 소모가 크다는 사실을 유추할 수 있다.
