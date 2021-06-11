@@ -9,7 +9,6 @@ public class Main {
             @Override
             public double fit(double x) {
                 return 5.38*x +0.2;
-                // x=19 , f(x)=441
             }
 
             @Override
