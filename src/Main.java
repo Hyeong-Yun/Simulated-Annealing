@@ -1,14 +1,12 @@
 package com.company;
-import SimulatedAnnealing;
 
 public class Main {
     public static void main(String[] args) {
         SimulatedAnnealing sa = new SimulatedAnnealing(10);
         Problem p = new Problem() {
-
             @Override
             public double fit(double x) {
-                return 5.38*x +0.2;
+                return  5.38*x +0.2;
             }
 
             @Override
@@ -20,5 +18,6 @@ public class Main {
         double x = sa.solve(p, 100, 0.99, 0, 10, 60);
         System.out.println("x = "+x);
         System.out.println("f(x) = "+p.fit(x));
+
     }
 }
